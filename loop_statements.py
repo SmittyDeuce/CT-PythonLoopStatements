@@ -5,14 +5,23 @@
 # Task 1: Code Correction
 # The range() function is used to generate a sequence of numbers. However, the code snippet provided below does not work as intended. Your task is to identify why the loop might not be executing and correct the code so that it prints numbers from 5 down to 3.
 
-# for i in range(5, 2):
-#     print(i)
+for i in range(5,2, -1):
+    print(i)
+
 # Task 2: Your Mood Today
 # Write a program that simulates different moods for each day of the week. Create a list of moods such as "Happy", "Sad", "Energetic", and "Calm". Using the range() function, loop through the days of the week and for each day, randomly select a mood from the list and print it. Ensure that your program includes the use of the random module to select the mood.
+import random
+moods = ['Happy', 'Sad', 'Energetic', 'Calm']
+days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+random.shuffle(moods)
+random.shuffle(days)
+print(f'today is {days[0]} and I am feeling {moods[0]}')
 
 # Task 3: Going Backwards
 # Create a countdown timer that starts from 10 and counts down to 1. Use the range() function to generate the countdown sequence. Each number should be printed on a new line. This task will help you understand how to generate a decreasing sequence with range().
-
+for i in range(10, 0, -1):
+    print(i)
 # 2. Double Scoop with Nested Loops
 # Objective:
 # The aim of this assignment is to practice using nested loops in Python. You will correct a nested loop code snippet, simulate a mood tracker, and generate a multiplication table.
@@ -201,4 +210,4 @@
 # # Countdown with range
 # for number in range(10, 0, -1):
 #     print(number)
-# print("The beat drops now!")
+# print("The beat drops now!") 
