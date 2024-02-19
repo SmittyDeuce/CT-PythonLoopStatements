@@ -5,8 +5,8 @@
 # Task 1: Code Correction
 # The range() function is used to generate a sequence of numbers. However, the code snippet provided below does not work as intended. Your task is to identify why the loop might not be executing and correct the code so that it prints numbers from 5 down to 3.
 
-for i in range(5,2, -1):
-    print(i)
+# for i in range(5,2, -1):
+#     print(i)
 
 # Task 2: Your Mood Today
 # Write a program that simulates different moods for each day of the week. Create a list of moods such as "Happy", "Sad", "Energetic", and "Calm". Using the range() function, loop through the days of the week and for each day, randomly select a mood from the list and print it. Ensure that your program includes the use of the random module to select the mood.
@@ -16,12 +16,14 @@ days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sun
 
 random.shuffle(moods)
 random.shuffle(days)
-print(f'today is {days[0]} and I am feeling {moods[0]}')
+# print(f'today is {days[0]} and I am feeling {moods[0]}')
 
 # Task 3: Going Backwards
 # Create a countdown timer that starts from 10 and counts down to 1. Use the range() function to generate the countdown sequence. Each number should be printed on a new line. This task will help you understand how to generate a decreasing sequence with range().
-for i in range(10, 0, -1):
-    print(i)
+# for i in range(10, 0, -1):
+#     print(i)
+
+
 # 2. Double Scoop with Nested Loops
 # Objective:
 # The aim of this assignment is to practice using nested loops in Python. You will correct a nested loop code snippet, simulate a mood tracker, and generate a multiplication table.
@@ -31,13 +33,32 @@ for i in range(10, 0, -1):
 
 # for i in range(3):
 #     for j in range(3):
-#         print("*")
-#     print("\\n")
+#         print("* ", end="")
+#     print()
+
+
 # Task 2: Your Mood Tracker
 # Simulate a mood tracker that records your mood at three different times of the day (morning, afternoon, evening) for each day of the week. Use nested loops to implement this: the outer loop should iterate over the days, and the inner loop should iterate over the times of the day. For each time, randomly select a mood from a predefined list and print it.
 
+time_of_day =['morning', 'afternoon', 'evening']
+for day in days:
+    for time in time_of_day:
+        print(f"On {day} in the {time} I was feeling", random.choice(moods))
+
+
 # Task 3: Multiplication Table
 # Your task is to create a multiplication table for numbers 1 through 5. Use nested loops where the outer loop represents the multiplier and the inner loop represents the multiplicand. Print the results in a tabular format.
+from tabulate import tabulate
+num_one_through_five = [1, 2, 3, 4, 5]
+multiplication_table = []
+for multiplier in num_one_through_five:
+    for multiplicand in num_one_through_five:
+        data = [
+            [f'{multiplier} x {multiplicand}', multiplier * multiplicand]
+        ]
+        headers = ["Multiplicand x Multiplier", "Product"]
+        multiplication_table = tabulate(data, headers=headers, tablefmt="grid")
+        print(multiplication_table)
 
 # 3. Mastering Python's For Loop
 # Objective:
