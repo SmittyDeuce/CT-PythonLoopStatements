@@ -40,10 +40,10 @@ random.shuffle(days)
 # Task 2: Your Mood Tracker
 # Simulate a mood tracker that records your mood at three different times of the day (morning, afternoon, evening) for each day of the week. Use nested loops to implement this: the outer loop should iterate over the days, and the inner loop should iterate over the times of the day. For each time, randomly select a mood from a predefined list and print it.
 
-time_of_day =['morning', 'afternoon', 'evening']
-for day in days:
-    for time in time_of_day:
-        print(f"On {day} in the {time} I was feeling", random.choice(moods))
+# time_of_day =['morning', 'afternoon', 'evening']
+# for day in days:
+#     for time in time_of_day:
+#         print(f"On {day} in the {time} I was feeling", random.choice(moods))
 
 
 # Task 3: Multiplication Table
@@ -51,14 +51,14 @@ for day in days:
 from tabulate import tabulate
 num_one_through_five = [1, 2, 3, 4, 5]
 multiplication_table = []
+data = []
 for multiplier in num_one_through_five:
     for multiplicand in num_one_through_five:
-        data = [
-            [f'{multiplier} x {multiplicand}', multiplier * multiplicand]
-        ]
-        headers = ["Multiplicand x Multiplier", "Product"]
-        multiplication_table = tabulate(data, headers=headers, tablefmt="grid")
-        print(multiplication_table)
+        data.append([f'{multiplier} x {multiplicand}', multiplier * multiplicand])
+        
+headers = ["Multiplicand x Multiplier", "Product"]
+multiplication_table = tabulate(data, headers=headers, tablefmt="grid")
+print(multiplication_table)
 
 # 3. Mastering Python's For Loop
 # Objective:
