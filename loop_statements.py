@@ -150,6 +150,13 @@ while marshmallows_counter < 10:
 
 # Task 1: Loop Condition Exploration
 # Write a while loop with a condition that will never be true (an infinite loop). Inside the loop, print a statement. Then, use a break statement to exit the loop after 5 iterations. Explain the role of the loop condition and the break statement in controlling the loop execution.
+counter = 0
+while True:
+    counter += 1
+    print("not yet")
+    if counter == 5:
+        break
+
 
 # Task 2: Conditional Exit
 # Modify the infinite loop from Task 1 to include a condition that will eventually be true and remove the break statement. The loop should terminate naturally once the condition is met. Discuss how the loop condition determines when the loop exits.
