@@ -58,24 +58,47 @@ for multiplier in num_one_through_five:
         
 headers = ["Multiplicand x Multiplier", "Product"]
 multiplication_table = tabulate(data, headers=headers, tablefmt="grid")
-print(multiplication_table)
+# print(multiplication_table)
 
 # 3. Mastering Python's For Loop
 # Objective:
 # The aim of this assignment is to explore and practice the control statements within Python's for loop, such as break, continue, pass, and the else clause. You will correct a loop, simulate mood swings with loop control, and implement a search with an else clause.
 
+
 # Task 1: Code Correction
 # The loop below is meant to print all numbers from 1 to 10, but it stops prematurely due to a break statement. Correct the code so that it skips over the number 5 and continues to print the rest of the numbers.
 
-# for i in range(1, 11):
-#     if i == 5:
-#         break
-#     print(i)
+for i in range(1, 11):
+    if i == 5:
+        continue
+    print(i)
+
+
 # Task 2: Your Mood Swings
 # Write a program that represents your mood swings throughout a day. The program should loop over each hour of the day and assign a random mood from a list for each hour. However, at 'lunchtime' (which you can define as a specific hour), the program should not print the mood. Use the continue statement to achieve this behavior.
+moods = ['Happy', 'Sad', 'Energetic', 'Calm', 'tired', "sleepy"]
+random.shuffle(moods)
+hour_of_day = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+def mood_swings():
+    for hour in hour_of_day:
+        if hour == 12:
+            continue
+        if hour <= 5 or hour >= 23:
+            print(f"At {hour} O'clock I was sleeping")
+        else:
+            print(f"At {hour} O'clock I was feeling {random.choice(moods)}")
+mood_swings()
+
 
 # Task 3: The Persistent Loop
 # Implement a for loop that searches for a specific number in a list of numbers. If the number is found, use break to exit the loop. If the loop completes without finding the number, an else clause should be used to print a message stating that the number was not found. This task will help you understand how to use the else clause in conjunction with the break statement in loops.
+
+numbers = [1,2,3,4,5,6,7,8,9,10,]
+for num in numbers:
+    if num == 11:
+        break
+else:
+    print("Number was not found")
 
 # 4. The Marshmallow Increment Challenge
 # Objective:
@@ -84,15 +107,42 @@ print(multiplication_table)
 # Task 1: Increment at the Start
 # Given the following code snippet, predict the output and then run the code to verify your prediction. Explain why the output is what it is based on the placement of the increment operation.
 
-# marshmallows = 0
-# while marshmallows < 5:
-#     marshmallows += 1
-#     print("Added a marshmallow! Now there are " + str(marshmallows) + " marshmallows.")
+marshmallows = 0
+while marshmallows < 5:
+    marshmallows += 1
+    print("Added a marshmallow! Now there are " + str(marshmallows) + " marshmallows.")
+    
+    #  based off the placement of the increment operation we get 1-5 instead of 0-4
+    # because it executing before the print statement and each iteration
+    
 # Task 2: Increment at the End
 # Modify the code from Task 1 by moving the increment operation to the end of the loop. Predict what the output will be and then run the code to check your prediction. Discuss the differences in the output and how the placement of the increment affects the loop's behavior.
+marshmallows = 0
+while marshmallows < 5:
+    # marshmallows += 1
+    print("Added a marshmallow! Now there are " + str(marshmallows) + " marshmallows.")
+    marshmallows += 1
+
+    # in this code the increment is being perfomed after each iteration which is
+    # causing the off by one
 
 # Task 3: Off-by-One Error Investigation
 # Create a while loop where an off-by-one error could occur due to the placement of the increment operation. Your loop should aim to fill a bag with exactly 10 marshmallows, but due to the off-by-one error, it either has too few or too many. Correct the error and explain the importance of increment placement in preventing such errors.
+
+# marshmallows_counter = 0
+# while marshmallows_counter < 10:
+#     print(f" we have {marshmallows_counter}")
+#     marshmallows_counter +=1
+
+    # here we end up with 9
+
+    marshmallows_counter = 0
+while marshmallows_counter < 10:
+    marshmallows_counter +=1
+    print(f" we have {marshmallows_counter}")
+
+    # here we end up with 10.. increment placement is important because
+    # we want the loop to execute the desired number of times
 
 # 5. Loop Condition Logic
 # Objective:
