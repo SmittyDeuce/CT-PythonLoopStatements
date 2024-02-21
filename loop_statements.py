@@ -150,29 +150,52 @@ while marshmallows_counter < 10:
 
 # Task 1: Loop Condition Exploration
 # Write a while loop with a condition that will never be true (an infinite loop). Inside the loop, print a statement. Then, use a break statement to exit the loop after 5 iterations. Explain the role of the loop condition and the break statement in controlling the loop execution.
-counter = 0
-while True:
-    counter += 1
-    print("not yet")
-    if counter == 5:
-        break
 
+x = 0
+while x > 0:
+    print("will i print")
+    if x == 5:
+        break
 
 # Task 2: Conditional Exit
 # Modify the infinite loop from Task 1 to include a condition that will eventually be true and remove the break statement. The loop should terminate naturally once the condition is met. Discuss how the loop condition determines when the loop exits.
 
+x = 0
+while x < 10:
+    x += 1
+    print("will i print")
+
 # Task 3: Loop with Multiple Conditions
 # Create a while loop that continues to run as long as multiple conditions are true. Use the and or or operators to combine conditions. Describe how combining conditions can create more complex loop behaviors.
+y = 0
+while y < 10 and y < 5:
+    y +=1
+    print("its real low")
 
+#  combining conditions creates more complex loop behaviors because it takes more
+# things into account at once like ordering One perfect pizza for everyone at a party
+    
 # 6. The Art of Loop Control
 # Objective:
 # The aim of this assignment is to master the use of else, break, continue, and pass in conjunction with while loops. You will implement loops that utilize these control statements to manage loop execution flow.
 
 # Task 1: Using else with while
 # Write a while loop that attempts to find a specific value in a list. Use an else clause to print a message if the value is not found. Explain how the else clause works with the while loop.
+primes = [2,3,5,7,11,13,17,19]
+num_to_find = random.choice(primes)
+i = 0
+while i < len(primes):
+    if primes[i] == num_to_find:
+        print(f"{num_to_find} was found at index {i}")
+        break
+    i +=1
+else:
+    print(f"{num_to_find} is not in list")
 
 # Task 2: Loop Interruption with break
 # Create a while loop that runs indefinitely, printing out the current time. Use a break statement to exit the loop if a certain condition is met (e.g., if the current time matches a target time). Discuss how the break statement can be used to exit a loop based on a condition.
+
+
 
 # Task 3: Skipping Iterations with continue
 # Develop a while loop that iterates over a range of numbers. Use the continue statement to skip over specific numbers (e.g., multiples of 3) and print the rest. Explain the purpose of the continue statement and how it affects the loop's iteration.
