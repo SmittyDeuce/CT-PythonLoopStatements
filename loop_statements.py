@@ -489,16 +489,31 @@ def numGuessingGame():
         else:
             print(f"your guess {guess} matches the answer {answer}")
             break
-numGuessingGame()
-
-
-
+# numGuessingGame()
 
 
 
 # Task 2: The Magic 8-Ball
 # Create a Magic 8-Ball program that provides random advice. Use random.choice() to select a random response from a list of possible answers every time the user asks a question.
-
+def magicBall():
+    responses =[  "Yes",
+    "No",
+    "It is certain",
+    "Without a doubt",
+    "Reply hazy, try again",
+    "Ask again later",
+    "Cannot predict now",
+    "Don't count on it",
+    "My sources say no",
+    "Outlook not so good"]
+    while True:
+        askQuestion = input("What would you like to know? ")
+        random_answer = random.choice(responses)
+        print("8-Ball says:", random_answer)
+        satisfied = input("Would you like to ask another question? (yes/no) ")
+        if satisfied.lower() != "yes":
+            break
+magicBall()
 # Task 3: The Card Picker
 # Develop a game where the computer randomly picks a card from a deck, and the player has to guess the suit or the rank. Use random.choice() to select the card, and then check if the player's guess matches the suit or rank of the chosen card.
 
