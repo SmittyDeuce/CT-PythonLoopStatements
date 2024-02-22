@@ -1,145 +1,145 @@
-# 1. The Range Riddle
-# Objective:
-# The aim of this assignment is to deepen your understanding of Python's range() function and its application in loops. You will correct a code snippet, simulate moods for different days, and create a countdown timer.
+# # 1. The Range Riddle
+# # Objective:
+# # The aim of this assignment is to deepen your understanding of Python's range() function and its application in loops. You will correct a code snippet, simulate moods for different days, and create a countdown timer.
 
-# Task 1: Code Correction
-# The range() function is used to generate a sequence of numbers. However, the code snippet provided below does not work as intended. Your task is to identify why the loop might not be executing and correct the code so that it prints numbers from 5 down to 3.
+# # Task 1: Code Correction
+# # The range() function is used to generate a sequence of numbers. However, the code snippet provided below does not work as intended. Your task is to identify why the loop might not be executing and correct the code so that it prints numbers from 5 down to 3.
 
-# for i in range(5,2, -1):
-#     print(i)
+# # for i in range(5,2, -1):
+# #     print(i)
 
-# Task 2: Your Mood Today
-# Write a program that simulates different moods for each day of the week. Create a list of moods such as "Happy", "Sad", "Energetic", and "Calm". Using the range() function, loop through the days of the week and for each day, randomly select a mood from the list and print it. Ensure that your program includes the use of the random module to select the mood.
-import random
-moods = ['Happy', 'Sad', 'Energetic', 'Calm']
-days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+# # Task 2: Your Mood Today
+# # Write a program that simulates different moods for each day of the week. Create a list of moods such as "Happy", "Sad", "Energetic", and "Calm". Using the range() function, loop through the days of the week and for each day, randomly select a mood from the list and print it. Ensure that your program includes the use of the random module to select the mood.
+# import random
+# moods = ['Happy', 'Sad', 'Energetic', 'Calm']
+# days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
-random.shuffle(moods)
-random.shuffle(days)
-# print(f'today is {days[0]} and I am feeling {moods[0]}')
+# random.shuffle(moods)
+# random.shuffle(days)
+# # print(f'today is {days[0]} and I am feeling {moods[0]}')
 
-# Task 3: Going Backwards
-# Create a countdown timer that starts from 10 and counts down to 1. Use the range() function to generate the countdown sequence. Each number should be printed on a new line. This task will help you understand how to generate a decreasing sequence with range().
-# for i in range(10, 0, -1):
-#     print(i)
-
-
-# 2. Double Scoop with Nested Loops
-# Objective:
-# The aim of this assignment is to practice using nested loops in Python. You will correct a nested loop code snippet, simulate a mood tracker, and generate a multiplication table.
-
-# Task 1: Code Correction
-# The code below is intended to print a 3x3 grid of asterisks. However, the current output is not as expected. Identify the logical errors in the nested loops and correct the code so that it prints the grid correctly, with each row of asterisks on a new line.
-
-# for i in range(3):
-#     for j in range(3):
-#         print("* ", end="")
-#     print()
+# # Task 3: Going Backwards
+# # Create a countdown timer that starts from 10 and counts down to 1. Use the range() function to generate the countdown sequence. Each number should be printed on a new line. This task will help you understand how to generate a decreasing sequence with range().
+# # for i in range(10, 0, -1):
+# #     print(i)
 
 
-# Task 2: Your Mood Tracker
-# Simulate a mood tracker that records your mood at three different times of the day (morning, afternoon, evening) for each day of the week. Use nested loops to implement this: the outer loop should iterate over the days, and the inner loop should iterate over the times of the day. For each time, randomly select a mood from a predefined list and print it.
+# # 2. Double Scoop with Nested Loops
+# # Objective:
+# # The aim of this assignment is to practice using nested loops in Python. You will correct a nested loop code snippet, simulate a mood tracker, and generate a multiplication table.
 
-# time_of_day =['morning', 'afternoon', 'evening']
-# for day in days:
-#     for time in time_of_day:
-#         print(f"On {day} in the {time} I was feeling", random.choice(moods))
+# # Task 1: Code Correction
+# # The code below is intended to print a 3x3 grid of asterisks. However, the current output is not as expected. Identify the logical errors in the nested loops and correct the code so that it prints the grid correctly, with each row of asterisks on a new line.
+
+# # for i in range(3):
+# #     for j in range(3):
+# #         print("* ", end="")
+# #     print()
 
 
-# Task 3: Multiplication Table
-# Your task is to create a multiplication table for numbers 1 through 5. Use nested loops where the outer loop represents the multiplier and the inner loop represents the multiplicand. Print the results in a tabular format.
-from tabulate import tabulate
-num_one_through_five = [1, 2, 3, 4, 5]
-multiplication_table = []
-data = []
-for multiplier in num_one_through_five:
-    for multiplicand in num_one_through_five:
-        data.append([f'{multiplier} x {multiplicand}', multiplier * multiplicand])
+# # Task 2: Your Mood Tracker
+# # Simulate a mood tracker that records your mood at three different times of the day (morning, afternoon, evening) for each day of the week. Use nested loops to implement this: the outer loop should iterate over the days, and the inner loop should iterate over the times of the day. For each time, randomly select a mood from a predefined list and print it.
+
+# # time_of_day =['morning', 'afternoon', 'evening']
+# # for day in days:
+# #     for time in time_of_day:
+# #         print(f"On {day} in the {time} I was feeling", random.choice(moods))
+
+
+# # Task 3: Multiplication Table
+# # Your task is to create a multiplication table for numbers 1 through 5. Use nested loops where the outer loop represents the multiplier and the inner loop represents the multiplicand. Print the results in a tabular format.
+# from tabulate import tabulate
+# num_one_through_five = [1, 2, 3, 4, 5]
+# multiplication_table = []
+# data = []
+# for multiplier in num_one_through_five:
+#     for multiplicand in num_one_through_five:
+#         data.append([f'{multiplier} x {multiplicand}', multiplier * multiplicand])
         
-headers = ["Multiplicand x Multiplier", "Product"]
-multiplication_table = tabulate(data, headers=headers, tablefmt="grid")
-# print(multiplication_table)
+# headers = ["Multiplicand x Multiplier", "Product"]
+# multiplication_table = tabulate(data, headers=headers, tablefmt="grid")
+# # print(multiplication_table)
 
-# 3. Mastering Python's For Loop
-# Objective:
-# The aim of this assignment is to explore and practice the control statements within Python's for loop, such as break, continue, pass, and the else clause. You will correct a loop, simulate mood swings with loop control, and implement a search with an else clause.
-
-
-# Task 1: Code Correction
-# The loop below is meant to print all numbers from 1 to 10, but it stops prematurely due to a break statement. Correct the code so that it skips over the number 5 and continues to print the rest of the numbers.
-
-for i in range(1, 11):
-    if i == 5:
-        continue
-    print(i)
+# # 3. Mastering Python's For Loop
+# # Objective:
+# # The aim of this assignment is to explore and practice the control statements within Python's for loop, such as break, continue, pass, and the else clause. You will correct a loop, simulate mood swings with loop control, and implement a search with an else clause.
 
 
-# Task 2: Your Mood Swings
-# Write a program that represents your mood swings throughout a day. The program should loop over each hour of the day and assign a random mood from a list for each hour. However, at 'lunchtime' (which you can define as a specific hour), the program should not print the mood. Use the continue statement to achieve this behavior.
-moods = ['Happy', 'Sad', 'Energetic', 'Calm', 'tired', "sleepy"]
-random.shuffle(moods)
-hour_of_day = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
-def mood_swings():
-    for hour in hour_of_day:
-        if hour == 12:
-            continue
-        if hour <= 5 or hour >= 23:
-            print(f"At {hour} O'clock I was sleeping")
-        else:
-            print(f"At {hour} O'clock I was feeling {random.choice(moods)}")
-mood_swings()
+# # Task 1: Code Correction
+# # The loop below is meant to print all numbers from 1 to 10, but it stops prematurely due to a break statement. Correct the code so that it skips over the number 5 and continues to print the rest of the numbers.
+
+# for i in range(1, 11):
+#     if i == 5:
+#         continue
+#     print(i)
 
 
-# Task 3: The Persistent Loop
-# Implement a for loop that searches for a specific number in a list of numbers. If the number is found, use break to exit the loop. If the loop completes without finding the number, an else clause should be used to print a message stating that the number was not found. This task will help you understand how to use the else clause in conjunction with the break statement in loops.
+# # Task 2: Your Mood Swings
+# # Write a program that represents your mood swings throughout a day. The program should loop over each hour of the day and assign a random mood from a list for each hour. However, at 'lunchtime' (which you can define as a specific hour), the program should not print the mood. Use the continue statement to achieve this behavior.
+# moods = ['Happy', 'Sad', 'Energetic', 'Calm', 'tired', "sleepy"]
+# random.shuffle(moods)
+# hour_of_day = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+# def mood_swings():
+#     for hour in hour_of_day:
+#         if hour == 12:
+#             continue
+#         if hour <= 5 or hour >= 23:
+#             print(f"At {hour} O'clock I was sleeping")
+#         else:
+#             print(f"At {hour} O'clock I was feeling {random.choice(moods)}")
+# mood_swings()
 
-numbers = [1,2,3,4,5,6,7,8,9,10,]
-for num in numbers:
-    if num == 11:
-        break
-else:
-    print("Number was not found")
 
-# 4. The Marshmallow Increment Challenge
-# Objective:
-# The aim of this assignment is to understand the impact of increment placement within a while loop in Python. You will experiment with different placements of the increment operation and observe how it affects the loop's execution and logic.
+# # Task 3: The Persistent Loop
+# # Implement a for loop that searches for a specific number in a list of numbers. If the number is found, use break to exit the loop. If the loop completes without finding the number, an else clause should be used to print a message stating that the number was not found. This task will help you understand how to use the else clause in conjunction with the break statement in loops.
 
-# Task 1: Increment at the Start
-# Given the following code snippet, predict the output and then run the code to verify your prediction. Explain why the output is what it is based on the placement of the increment operation.
+# numbers = [1,2,3,4,5,6,7,8,9,10,]
+# for num in numbers:
+#     if num == 11:
+#         break
+# else:
+#     print("Number was not found")
 
-marshmallows = 0
-while marshmallows < 5:
-    marshmallows += 1
-    print("Added a marshmallow! Now there are " + str(marshmallows) + " marshmallows.")
+# # 4. The Marshmallow Increment Challenge
+# # Objective:
+# # The aim of this assignment is to understand the impact of increment placement within a while loop in Python. You will experiment with different placements of the increment operation and observe how it affects the loop's execution and logic.
+
+# # Task 1: Increment at the Start
+# # Given the following code snippet, predict the output and then run the code to verify your prediction. Explain why the output is what it is based on the placement of the increment operation.
+
+# marshmallows = 0
+# while marshmallows < 5:
+#     marshmallows += 1
+#     print("Added a marshmallow! Now there are " + str(marshmallows) + " marshmallows.")
     
-    #  based off the placement of the increment operation we get 1-5 instead of 0-4
-    # because it executing before the print statement and each iteration
+#     #  based off the placement of the increment operation we get 1-5 instead of 0-4
+#     # because it executing before the print statement and each iteration
     
-# Task 2: Increment at the End
-# Modify the code from Task 1 by moving the increment operation to the end of the loop. Predict what the output will be and then run the code to check your prediction. Discuss the differences in the output and how the placement of the increment affects the loop's behavior.
-marshmallows = 0
-while marshmallows < 5:
-    # marshmallows += 1
-    print("Added a marshmallow! Now there are " + str(marshmallows) + " marshmallows.")
-    marshmallows += 1
+# # Task 2: Increment at the End
+# # Modify the code from Task 1 by moving the increment operation to the end of the loop. Predict what the output will be and then run the code to check your prediction. Discuss the differences in the output and how the placement of the increment affects the loop's behavior.
+# marshmallows = 0
+# while marshmallows < 5:
+#     # marshmallows += 1
+#     print("Added a marshmallow! Now there are " + str(marshmallows) + " marshmallows.")
+#     marshmallows += 1
 
-    # in this code the increment is being perfomed after each iteration which is
-    # causing the off by one
+#     # in this code the increment is being perfomed after each iteration which is
+#     # causing the off by one
 
-# Task 3: Off-by-One Error Investigation
-# Create a while loop where an off-by-one error could occur due to the placement of the increment operation. Your loop should aim to fill a bag with exactly 10 marshmallows, but due to the off-by-one error, it either has too few or too many. Correct the error and explain the importance of increment placement in preventing such errors.
+# # Task 3: Off-by-One Error Investigation
+# # Create a while loop where an off-by-one error could occur due to the placement of the increment operation. Your loop should aim to fill a bag with exactly 10 marshmallows, but due to the off-by-one error, it either has too few or too many. Correct the error and explain the importance of increment placement in preventing such errors.
 
-# marshmallows_counter = 0
+# # marshmallows_counter = 0
+# # while marshmallows_counter < 10:
+# #     print(f" we have {marshmallows_counter}")
+# #     marshmallows_counter +=1
+
+#     # here we end up with 9
+
+#     marshmallows_counter = 0
 # while marshmallows_counter < 10:
-#     print(f" we have {marshmallows_counter}")
 #     marshmallows_counter +=1
-
-    # here we end up with 9
-
-    marshmallows_counter = 0
-while marshmallows_counter < 10:
-    marshmallows_counter +=1
-    print(f" we have {marshmallows_counter}")
+#     print(f" we have {marshmallows_counter}")
 
     # here we end up with 10.. increment placement is important because
     # we want the loop to execute the desired number of times
@@ -151,26 +151,26 @@ while marshmallows_counter < 10:
 # Task 1: Loop Condition Exploration
 # Write a while loop with a condition that will never be true (an infinite loop). Inside the loop, print a statement. Then, use a break statement to exit the loop after 5 iterations. Explain the role of the loop condition and the break statement in controlling the loop execution.
 
-x = 0
-while x > 0:
-    print("will i print")
-    if x == 5:
-        break
+# x = 0
+# while x > 0:
+#     print("will i print")
+#     if x == 5:
+#         break
 
 # Task 2: Conditional Exit
 # Modify the infinite loop from Task 1 to include a condition that will eventually be true and remove the break statement. The loop should terminate naturally once the condition is met. Discuss how the loop condition determines when the loop exits.
 
-x = 0
-while x < 10:
-    x += 1
-    print("will i print")
+# x = 0
+# while x < 10:
+#     x += 1
+#     print("will i print")
 
 # Task 3: Loop with Multiple Conditions
 # Create a while loop that continues to run as long as multiple conditions are true. Use the and or or operators to combine conditions. Describe how combining conditions can create more complex loop behaviors.
-y = 0
-while y < 10 and y < 5:
-    y +=1
-    print("its real low")
+# y = 0
+# while y < 10 and y < 5:
+#     y +=1
+#     print("its real low")
 
 #  combining conditions creates more complex loop behaviors because it takes more
 # things into account at once like ordering One perfect pizza for everyone at a party
@@ -181,27 +181,56 @@ while y < 10 and y < 5:
 
 # Task 1: Using else with while
 # Write a while loop that attempts to find a specific value in a list. Use an else clause to print a message if the value is not found. Explain how the else clause works with the while loop.
-primes = [2,3,5,7,11,13,17,19]
-num_to_find = random.choice(primes)
-i = 0
-while i < len(primes):
-    if primes[i] == num_to_find:
-        print(f"{num_to_find} was found at index {i}")
-        break
-    i +=1
-else:
-    print(f"{num_to_find} is not in list")
+# primes = [2,3,5,7,11,13,17,19]
+# num_to_find = random.choice(primes)
+# i = 0
+# while i < len(primes):
+#     if primes[i] == num_to_find:
+#         print(f"{num_to_find} was found at index {i}")
+#         break
+#     i +=1
+# else:
+    # print(f"{num_to_find} is not in list")
 
+    
 # Task 2: Loop Interruption with break
 # Create a while loop that runs indefinitely, printing out the current time. Use a break statement to exit the loop if a certain condition is met (e.g., if the current time matches a target time). Discuss how the break statement can be used to exit a loop based on a condition.
+# from datetime import datetime, timedelta
+# current_date = datetime.now()
+# delta = timedelta(hours=30)
+# hourPlus30 = current_date + delta
+# while True:
+#     print(current_date)
+#     current_date += timedelta(hours=1)
+#     if current_date >= hourPlus30:
+#         break
 
 
 
 # Task 3: Skipping Iterations with continue
 # Develop a while loop that iterates over a range of numbers. Use the continue statement to skip over specific numbers (e.g., multiples of 3) and print the rest. Explain the purpose of the continue statement and how it affects the loop's iteration.
+# numbers = [1,2,3,4,5,6,7,8,9,10,]
+# index = 0
+# while index < len(numbers):
+#     num = numbers[index]
+#     index +=1
+#     if num % 2 == 0:
+#         continue
+#     print("Index: ",num)
+
+    # continue filters out information we dont want
+
 
 # Task 4: The Placeholder pass
 # Implement a while loop where you want to temporarily skip the implementation of a condition but plan to add more code later. Use the pass statement as a placeholder. Describe the use of pass in a loop and when it might be useful.
+# new_counter = 0
+# while new_counter < 100:
+#     new_counter += 1
+#     print("New Counter: ",new_counter)
+#     if 100 % new_counter == 0:
+#         pass
+
+# pass lets us skip a conditial so we may come back to it
 
 # 7. Python's Random Game Night
 # Objective:
@@ -210,21 +239,28 @@ else:
 # Task 1: Dice Rolling Simulator
 # Using the provided code snippet, simulate rolling a six-sided die 10 times. Extend the simulation to keep track of how many times each number is rolled. After the simulation, print out the frequency of each number.
 
-# import random
+import random
 
-# # Initialize a dictionary to keep track of dice roll frequencies
-# roll_count = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+# Initialize a dictionary to keep track of dice roll frequencies
+roll_count = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+keys = list(roll_count.keys())
+# for key in keys:
+#    if key in roll_count:
+#       roll_count[key] += 1
+# print(roll_count)
 
-# # Let's roll the dice 10 times
-# for _ in range(10):
-#     dice_roll = random.randint(1, 6)
-#     # Update the roll_count dictionary
-#     roll_count[dice_roll] += 1
-#     print("You rolled a " + str(dice_roll) + "!")
-
+# Let's roll the dice 10 times
+for _ in range(10):
+    dice_roll = random.randint(1, 6)
+    # Update the roll_count dictionary
+    print("Dice Roll: ", "You rolled a " + str(dice_roll) + "!")
+    if dice_roll in roll_count:
+        roll_count[dice_roll]+= 1
+    print("Roll Count: ",roll_count)
 # # Print out the frequency of each number
-# for number, frequency in roll_count.items():
-#     print(f"Number {number} was rolled {frequency} times.")
+    for number, frequency in roll_count.items():
+     print(f"Number {number} was rolled {frequency} times.")
+
 # Task 2: Random Choice Game
 # Create a game where a player has to guess the random item picked by the computer from a list. Use random.choice() to select the item and take the user's guess via input. Provide feedback on whether they guessed correctly or not.
 
