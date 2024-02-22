@@ -1,3 +1,4 @@
+import random
 # # 1. The Range Riddle
 # # Objective:
 # # The aim of this assignment is to deepen your understanding of Python's range() function and its application in loops. You will correct a code snippet, simulate moods for different days, and create a countdown timer.
@@ -239,7 +240,6 @@
 # Task 1: Dice Rolling Simulator
 # Using the provided code snippet, simulate rolling a six-sided die 10 times. Extend the simulation to keep track of how many times each number is rolled. After the simulation, print out the frequency of each number.
 
-import random
 
 # Initialize a dictionary to keep track of dice roll frequencies
 roll_count = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
@@ -457,12 +457,44 @@ keys = list(roll_count.keys())
 # Task 3: Shuffling a Deck
 # Simulate shuffling a deck of cards using random.shuffle(). Create a list representing a deck of cards, then shuffle it and print the shuffled deck. Discuss how random.shuffle() can be used in game development or other applications.
 
+# type = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
+# suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
+# random.shuffle(suits)
+# random.shuffle(type)
+# deck = []
+# for suit in suits:
+#     for value in type:
+#         shuffled = f"{value} of {suit}"
+#         deck.append(shuffled)
+# print(deck)
+
 # 8. The Random Challenge Course
 # Objective:
 # The aim of this assignment is to challenge your understanding of the random package by creating a series of mini-games that require different aspects of randomness. You will create three mini-games, each focusing on a different function from the random package.
 
+
+
+
 # Task 1: The Guessing Game
 # Implement a number guessing game where the computer randomly selects a number within a range, and the player has to guess it. Use random.randint() to generate the number and give the player a hint after each incorrect guess whether their guess was too high or too low.
+
+def numGuessingGame():
+    answer = random.randint(1,20)
+    while True:
+        guess = input("Guess a number between 1 and 20 \n")
+        if int(guess) < answer:
+            print("guessed too Low")
+        elif int(guess) > answer:
+            print("guessed too high")
+        else:
+            print(f"your guess {guess} matches the answer {answer}")
+            break
+numGuessingGame()
+
+
+
+
+
 
 # Task 2: The Magic 8-Ball
 # Create a Magic 8-Ball program that provides random advice. Use random.choice() to select a random response from a list of possible answers every time the user asks a question.
