@@ -250,19 +250,209 @@ keys = list(roll_count.keys())
 # print(roll_count)
 
 # Let's roll the dice 10 times
-for _ in range(10):
-    dice_roll = random.randint(1, 6)
-    # Update the roll_count dictionary
-    print("Dice Roll: ", "You rolled a " + str(dice_roll) + "!")
-    if dice_roll in roll_count:
-        roll_count[dice_roll]+= 1
-    print("Roll Count: ",roll_count)
-# # Print out the frequency of each number
-    for number, frequency in roll_count.items():
-     print(f"Number {number} was rolled {frequency} times.")
+# for _ in range(10):
+#     dice_roll = random.randint(1, 6)
+#     # Update the roll_count dictionary
+#     print("Dice Roll: ", "You rolled a " + str(dice_roll) + "!")
+#     if dice_roll in roll_count:
+#         roll_count[dice_roll]+= 1
+#     print("Roll Count: ",roll_count)
+# # # Print out the frequency of each number
+#     for number, frequency in roll_count.items():
+#      print(f"Number {number} was rolled {frequency} times.")
 
 # Task 2: Random Choice Game
 # Create a game where a player has to guess the random item picked by the computer from a list. Use random.choice() to select the item and take the user's guess via input. Provide feedback on whether they guessed correctly or not.
+# NBA_Teams = ["Atlanta Hawks",
+#     "Boston Celtics",
+#     "Brooklyn Nets",
+#     "Charlotte Hornets",
+#     "Chicago Bulls",
+#     "Cleveland Cavaliers",
+#     "Dallas Mavericks",
+#     "Denver Nuggets",
+#     "Detroit Pistons",
+#     "Golden State Warriors",
+#     "Houston Rockets",
+#     "Indiana Pacers",
+#     "LA Clippers",
+#     "Los Angeles Lakers",
+#     "Memphis Grizzlies",
+#     "Miami Heat",
+#     "Milwaukee Bucks",
+#     "Minnesota Timberwolves",
+#     "New Orleans Pelicans",
+#     "New York Knicks",
+#     "Oklahoma City Thunder",
+#     "Orlando Magic",
+#     "Philadelphia 76ers",
+#     "Phoenix Suns",
+#     "Portland Trail Blazers",
+#     "Sacramento Kings",
+#     "San Antonio Spurs",
+#     "Toronto Raptors",
+#     "Utah Jazz",
+#     "Washington Wizards"]
+# NFL_Teams = [ "Arizona Cardinals",
+#     "Atlanta Falcons",
+#     "Baltimore Ravens",
+#     "Buffalo Bills",
+#     "Carolina Panthers",
+#     "Chicago Bears",
+#     "Cincinnati Bengals",
+#     "Cleveland Browns",
+#     "Dallas Cowboys",
+#     "Denver Broncos",
+#     "Detroit Lions",
+#     "Green Bay Packers",
+#     "Houston Texans",
+#     "Indianapolis Colts",
+#     "Jacksonville Jaguars",
+#     "Kansas City Chiefs",
+#     "Las Vegas Raiders",
+#     "Los Angeles Chargers",
+#     "Los Angeles Rams",
+#     "Miami Dolphins",
+#     "Minnesota Vikings",
+#     "New England Patriots",
+#     "New Orleans Saints",
+#     "New York Giants",
+#     "New York Jets",
+#     "Philadelphia Eagles",
+#     "Pittsburgh Steelers",
+#     "San Francisco 49ers",
+#     "Seattle Seahawks",
+#     "Tampa Bay Buccaneers",
+#     "Tennessee Titans",
+#     "Washington Football Team"]
+# MLB_Teams = [ "Arizona Diamondbacks",
+#     "Atlanta Braves",
+#     "Baltimore Orioles",
+#     "Boston Red Sox",
+#     "Chicago White Sox",
+#     "Chicago Cubs",
+#     "Cincinnati Reds",
+#     "Cleveland Guardians",
+#     "Colorado Rockies",
+#     "Detroit Tigers",
+#     "Houston Astros",
+#     "Kansas City Royals",
+#     "Los Angeles Angels",
+#     "Los Angeles Dodgers",
+#     "Miami Marlins",
+#     "Milwaukee Brewers",
+#     "Minnesota Twins",
+#     "New York Yankees",
+#     "New York Mets",
+#     "Oakland Athletics",
+#     "Philadelphia Phillies",
+#     "Pittsburgh Pirates",
+#     "San Diego Padres",
+#     "San Francisco Giants",
+#     "Seattle Mariners",
+#     "St. Louis Cardinals",
+#     "Tampa Bay Rays",
+#     "Texas Rangers",
+#     "Toronto Blue Jays",
+#     "Washington Nationals"]
+# NHL_Teams = [  "Anaheim Ducks",
+#     "Arizona Coyotes",
+#     "Boston Bruins",
+#     "Buffalo Sabres",
+#     "Calgary Flames",
+#     "Carolina Hurricanes",
+#     "Chicago Blackhawks",
+#     "Colorado Avalanche",
+#     "Columbus Blue Jackets",
+#     "Dallas Stars",
+#     "Detroit Red Wings",
+#     "Edmonton Oilers",
+#     "Florida Panthers",
+#     "Los Angeles Kings",
+#     "Minnesota Wild",
+#     "Montreal Canadiens",
+#     "Nashville Predators",
+#     "New Jersey Devils",
+#     "New York Islanders",
+#     "New York Rangers",
+#     "Ottawa Senators",
+#     "Philadelphia Flyers",
+#     "Pittsburgh Penguins",
+#     "San Jose Sharks",
+#     "Seattle Kraken",
+#     "St. Louis Blues",
+#     "Tampa Bay Lightning",
+#     "Toronto Maple Leafs",
+#     "Vancouver Canucks",
+#     "Vegas Golden Knights",
+#     "Washington Capitals",
+#     "Winnipeg Jets"]
+# NBA = random.choice(NBA_Teams)
+# NFL = random.choice(NFL_Teams)
+# MLB = random.choice(MLB_Teams)
+# NHL = random.choice(NHL_Teams)
+# tries = 0
+# computerGuessList = [NBA, NFL, MLB, NHL]
+# def randomChoiceGame():
+#     print("Guess the team City/State and their nickname")
+#     whatLeague = input("From what league would you like to guess from?: MLB, NBA, NHL or NFL ")
+#     if whatLeague.lower() == "nba":
+#         tries = 5
+#         answer = computerGuessList[0]
+#         while tries > 0:
+#             print(f"you have {tries} left")
+#             guess = input("Guess a teams state/city and name proper grammar is needed: ex) the period on st. \n")
+#             if answer.lower() == guess.lower():
+#                 print("YOU WIN!!!")
+#                 break
+#             tries -= 1
+#         else:
+#             print(f" the answer was {answer} You have no more attempts. Game Over")
+    
+#     if whatLeague.lower() == "nfl":
+#         tries = 5
+#         answer = computerGuessList[1]
+#         while tries > 0:
+#             print(f"you have {tries} left")
+#             guess = input("Guess a teams state/city and name proper grammar is needed: ex) the period on st. \n")
+#             if answer.lower() == guess.lower():
+#                 print("YOU WIN!!!")
+#                 break
+#             tries -= 1
+#         else:
+#             print(f" the answer was {answer} You have no more attempts. Game Over")
+
+
+#     if whatLeague.lower() == "mlb":
+#         tries = 5
+#         answer = computerGuessList[2]
+#         while tries > 0:
+#             print(f"you have {tries} left")
+#             guess = input("Guess a teams state/city and name proper grammar is needed: ex) the period on st. \n")
+#             if answer.lower() == guess.lower():
+#                 print("YOU WIN!!!")
+#                 break
+#             tries -= 1
+#         else:
+#             print(f" the answer was {answer} You have no more attempts. Game Over")
+    
+#     if whatLeague.lower() == "nhl":
+#         tries = 5
+#         answer = computerGuessList[3]
+#         while tries > 0:
+#             print(f"you have {tries} left")
+#             guess = input("Guess a teams state/city and name proper grammar is needed: ex) the period on st. \n")
+#             if answer.lower() == guess.lower():
+#                 print("YOU WIN!!!")
+#                 break
+#             tries -= 1
+#         else:
+#             print(f" the answer was {answer} You have no more attempts. Game Over")
+
+    
+
+
+# randomChoiceGame()
 
 # Task 3: Shuffling a Deck
 # Simulate shuffling a deck of cards using random.shuffle(). Create a list representing a deck of cards, then shuffle it and print the shuffled deck. Discuss how random.shuffle() can be used in game development or other applications.
