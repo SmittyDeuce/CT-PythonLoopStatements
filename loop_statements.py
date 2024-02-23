@@ -513,9 +513,42 @@ def magicBall():
         satisfied = input("Would you like to ask another question? (yes/no) ")
         if satisfied.lower() != "yes":
             break
-magicBall()
+# magicBall()
+        
+
 # Task 3: The Card Picker
 # Develop a game where the computer randomly picks a card from a deck, and the player has to guess the suit or the rank. Use random.choice() to select the card, and then check if the player's guess matches the suit or rank of the chosen card.
+rank = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
+suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
+def cardPicker():
+    rankOrSuit = input("what do you want to guess enter Rank or Suit ")
+    if rankOrSuit.lower() == "rank":
+        tries = 3
+        answer = random.choice(rank)
+        while tries > 0:
+            print(f"you have {tries} tries left")
+            guessRank = input("guess a rank ")
+            if answer.lower() == guessRank.lower():
+                print(f"answer {answer} matches guess {guessRank}")
+                break
+            tries -=1
+        else:
+            print(f"tough luck {answer} was the answer")
+
+    if rankOrSuit.lower() == "suit":
+        tries = 2
+        answer = random.choice(suits)
+        while tries > 0:
+            print(f"you have {tries} tries left ")
+            guessSuit = input("Guess a suit ")
+            if answer.lower() == guessSuit.lower():
+                print(f"answer {answer} matches guess {guessSuit}")
+                break
+            tries -= 1
+        else:
+            print(f"ran out of tries, answer was {answer}")
+cardPicker()
+
 
 # 9. Looping Lists - The Rhythm of Repetition
 # Objective:
