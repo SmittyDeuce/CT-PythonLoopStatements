@@ -134,7 +134,6 @@ while marshmallows_counter < 10:
     print(f" we have {marshmallows_counter}")
     marshmallows_counter +=1
 
-
     # here we end up with 9
 
 #     marshmallows_counter = 0
